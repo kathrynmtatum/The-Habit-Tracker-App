@@ -25,7 +25,11 @@
                                                 <action selector="backButtonPressed:" destination="Jc4-GS-ou2" id="7ea-N2-qno"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="JCC-h3-ddk"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="JCC-h3-ddk">
+                                            <connections>
+                                                <segue destination="4Au-iJ-67g" kind="show" id="87S-zu-dia"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -64,23 +68,37 @@
         <!--Item Detail Table View Controller-->
         <scene sceneID="Eq3-vc-nKV">
             <objects>
-                <tableViewController id="4Au-iJ-67g" customClass="ItemDetailTableViewController" customModule="The_Habit_Tracker_App" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="4Au-iJ-67g" customClass="ItemDetailTableViewController" customModule="The_Habit_Tracker_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="W8a-Fw-faP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="hd4-oj-Kvo">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem id="tlQ-MV-vYH">
+                                    <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="oPM-lF-TaS">
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="4Au-iJ-67g" id="ebQ-78-0Kb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem key="rightBarButtonItem" systemItem="save" id="wmx-vO-UvQ"/>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
                         <sections>
                             <tableViewSection headerTitle="Goal" id="gD9-rC-ABP">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ajA-EK-roI">
-                                        <rect key="frame" x="0.0" y="55.333332061767578" width="375" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="99.333332061767578" width="375" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ajA-EK-roI" id="Z0F-bM-dvC">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KwZ-UQ-vIs">
-                                                    <rect key="frame" x="10" y="5" width="356" height="34"/>
+                                                    <rect key="frame" x="9" y="5" width="356" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -93,7 +111,7 @@
                             <tableViewSection headerTitle="Notes" id="FNv-DA-cMq">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="128" id="ZxE-PX-LN9">
-                                        <rect key="frame" x="0.0" y="155" width="375" height="128"/>
+                                        <rect key="frame" x="0.0" y="199" width="375" height="128"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZxE-PX-LN9" id="BPj-Ei-qFA">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
@@ -116,7 +134,7 @@
                             <tableViewSection headerTitle="Set Reminder" id="ppw-ai-rvn">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="171" id="Kx7-Wq-lK6">
-                                        <rect key="frame" x="0.0" y="339" width="375" height="171"/>
+                                        <rect key="frame" x="0.0" y="383" width="375" height="171"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kx7-Wq-lK6" id="nJS-FM-yFh">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="171"/>
@@ -134,7 +152,7 @@
                             <tableViewSection headerTitle="Location Reminder" id="0mr-m5-zf0">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="FFg-Yb-02f">
-                                        <rect key="frame" x="0.0" y="566" width="375" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="610" width="375" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FFg-Yb-02f" id="7ZN-Fj-IS4">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
@@ -149,6 +167,13 @@
                             <outlet property="delegate" destination="4Au-iJ-67g" id="iij-Hc-Loz"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="Lyq-kk-op3"/>
+                    <connections>
+                        <outlet property="datePicker" destination="Wrb-L7-fGO" id="Opa-gw-LuG"/>
+                        <outlet property="nameField" destination="KwZ-UQ-vIs" id="8m9-fT-OLc"/>
+                        <outlet property="noteView" destination="ITf-ac-Eq9" id="jAC-zl-S0e"/>
+                        <outlet property="saveBarButton" destination="wmx-vO-UvQ" id="7ae-cZ-K2p"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggi-cm-fGE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -248,7 +273,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem id="ZlD-rK-ChE">
-                                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="eeK-AK-gph"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="eeK-AK-gph">
+                                            <connections>
+                                                <segue destination="4Au-iJ-67g" kind="show" id="Bpx-wb-5ck"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -333,24 +362,27 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Habits and Goals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBi-5N-KE0">
-                                <rect key="frame" x="0.0" y="269" width="375" height="48"/>
+                                <rect key="frame" x="0.0" y="278" width="375" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="28"/>
                                 <color key="textColor" red="0.070588235289999995" green="0.24386978149999999" blue="0.41963034869999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kky-sh-0k6">
-                                <rect key="frame" x="0.0" y="308" width="375" height="420"/>
+                                <rect key="frame" x="0.0" y="325" width="375" height="403"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="KDZ-WW-yVz">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="KDZ-WW-yVz">
                                         <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KDZ-WW-yVz" id="9rk-Sj-7Wf">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="4Au-iJ-67g" kind="show" identifier="ShowDetail" id="zWk-C9-vqB"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -376,7 +408,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="k6D-3q-g63"/>
         <segue reference="0ER-4h-Vm5"/>
-        <segue reference="nlf-AU-6KQ"/>
+        <segue reference="qQm-Gb-OFm"/>
+        <segue reference="zWk-C9-vqB"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Goal" width="1494" height="725"/>
