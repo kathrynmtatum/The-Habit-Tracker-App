@@ -1,24 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="GSw-cZ-OzH">
+            <objects>
+                <viewController id="Jc4-GS-ou2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nMj-Mf-a8C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="sbE-wQ-LOw"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dBc-Pf-oip" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="-610"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="Eq3-vc-nKV">
+            <objects>
+                <tableViewController id="4Au-iJ-67g" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="W8a-Fw-faP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ajA-EK-roI">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ajA-EK-roI" id="Z0F-bM-dvC">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4Au-iJ-67g" id="sd3-6X-6hk"/>
+                            <outlet property="delegate" destination="4Au-iJ-67g" id="iij-Hc-Loz"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ggi-cm-fGE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="920" y="-609"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="The_Habit_Tracker_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2R-3f-W0f">
+                                <rect key="frame" x="0.0" y="728" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="wNe-re-53W"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Home" image="house.fill" catalog="system" id="ujI-DC-mp7"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="jTZ-Kj-oI9"/>
+                                    <barButtonItem title="Profile" image="person.crop.square" catalog="system" id="swa-47-a52"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ReU-xb-vvp"/>
+                                    <barButtonItem title="Browse" image="book" catalog="system" id="SJz-sF-IIX"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="p2R-3f-W0f" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="CE1-xZ-tOD"/>
+                            <constraint firstItem="p2R-3f-W0f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="e0Y-rd-c7W"/>
+                            <constraint firstItem="p2R-3f-W0f" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="q6D-xg-Pb2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="118"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="oAQ-uM-GCk">
+            <objects>
+                <viewController id="NiC-8p-ndx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="30l-PP-9I7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PBj-76-Zgz">
+                                <rect key="frame" x="0.0" y="728" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="paV-Be-xwd"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Home" image="house.fill" catalog="system" id="BUa-gQ-eFW"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="E09-zp-dqT"/>
+                                    <barButtonItem title="Profile" image="person.crop.square" catalog="system" id="lrm-xF-n0v"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Lbt-At-Cme"/>
+                                    <barButtonItem title="Browse" image="book" catalog="system" id="cIZ-Il-OqQ"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PBj-76-Zgz" firstAttribute="trailing" secondItem="CfJ-TY-6Pt" secondAttribute="trailing" id="49v-Vo-KCb"/>
+                            <constraint firstItem="PBj-76-Zgz" firstAttribute="bottom" secondItem="CfJ-TY-6Pt" secondAttribute="bottom" id="7hQ-q7-fHF"/>
+                            <constraint firstItem="PBj-76-Zgz" firstAttribute="leading" secondItem="CfJ-TY-6Pt" secondAttribute="leading" id="Ry2-9q-05v"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CfJ-TY-6Pt"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LMh-vr-uBB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="919" y="120"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="book" catalog="system" width="128" height="101"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="person.crop.square" catalog="system" width="128" height="114"/>
+    </resources>
 </document>
