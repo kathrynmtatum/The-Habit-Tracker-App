@@ -20,6 +20,26 @@ class ProfileViewController: UIViewController {
         tableView.dataSource = self
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDetail" {
+            let destination = segue.destination as! ItemDetailTableViewController
+            let selectedIndexPath = tableView.indexPathForSelectedRow!
+            destination.habitItem = habitArray[selectedIndexPath.row]
+        } else {
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                tableView.deselectRow(at: selectedIndexPath, animated: true)
+            }
+        }
+    }
+    
+    @IBAction func unwindFromDetail(segue: UIStoryboardSegue) {
+        let source = segue.source as! ItemDetailTableViewController
+        if let selectedIndexPath = tableView.indexPathForSelectedRow {
+            habitArray[selectedIndexPath.row] = source.habitItem
+            tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
+        }
+    }
+    
 
 }
 

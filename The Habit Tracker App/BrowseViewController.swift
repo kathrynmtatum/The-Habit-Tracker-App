@@ -19,6 +19,19 @@ class BrowseViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowHabits" {
+            let destination = segue.destination as! BrowseDetailViewController
+            let selectedIndexPath = tableView.indexPathForSelectedRow!
+            destination.selection = categories[selectedIndexPath.row]
+        } else {
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                tableView.deselectRow(at: selectedIndexPath, animated: true)
+            }
+        }
+    }
+    
 }
 
 extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {

@@ -52,6 +52,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="4Au-iJ-67g" kind="showDetail" identifier="EditGoal" id="Nez-05-Yp4"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -60,6 +63,9 @@
                         <viewLayoutGuide key="safeArea" id="sbE-wQ-LOw"/>
                     </view>
                     <navigationItem key="navigationItem" id="z1F-Du-wMr"/>
+                    <connections>
+                        <outlet property="tableView" destination="6b3-oM-TXQ" id="vD9-VY-FvF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dBc-Pf-oip" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -83,7 +89,11 @@
                                             <action selector="cancelButtonPressed:" destination="4Au-iJ-67g" id="ebQ-78-0Kb"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem key="rightBarButtonItem" systemItem="save" id="wmx-vO-UvQ"/>
+                                    <barButtonItem key="rightBarButtonItem" systemItem="save" id="wmx-vO-UvQ">
+                                        <connections>
+                                            <segue destination="23O-w5-hsh" kind="unwind" unwindAction="unwindFromDetailWithSegue:" id="ToY-Ll-Fd5"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </navigationItem>
                             </items>
                         </navigationBar>
@@ -98,7 +108,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KwZ-UQ-vIs">
-                                                    <rect key="frame" x="9" y="5" width="356" height="34"/>
+                                                    <rect key="frame" x="7" y="5" width="356" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -176,6 +186,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggi-cm-fGE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="23O-w5-hsh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1904.8" y="-610.34482758620697"/>
         </scene>
@@ -301,7 +312,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Jc4-GS-ou2" kind="show" id="j1y-GJ-nP0"/>
+                                            <segue destination="Jc4-GS-ou2" kind="show" identifier="ShowHabits" id="j1y-GJ-nP0"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -408,8 +419,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="k6D-3q-g63"/>
         <segue reference="0ER-4h-Vm5"/>
-        <segue reference="qQm-Gb-OFm"/>
-        <segue reference="zWk-C9-vqB"/>
+        <segue reference="nlf-AU-6KQ"/>
+        <segue reference="Nez-05-Yp4"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Goal" width="1494" height="725"/>

@@ -23,7 +23,6 @@ class ItemDetailTableViewController: UITableViewController {
         if habitItem == nil {
             habitItem = ""
         }
-        
         nameField.text = habitItem
     }
     
