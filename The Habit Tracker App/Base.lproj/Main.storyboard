@@ -159,13 +159,13 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Location Reminder" id="0mr-m5-zf0">
+                            <tableViewSection headerTitle="Days of the week" id="wBg-nB-b6f">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="FFg-Yb-02f">
-                                        <rect key="frame" x="0.0" y="610" width="375" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="107" id="5e0-NQ-pbo">
+                                        <rect key="frame" x="0.0" y="610" width="375" height="107"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FFg-Yb-02f" id="7ZN-Fj-IS4">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5e0-NQ-pbo" id="9sY-w3-1tz">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="107"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -431,7 +431,7 @@
         <segue reference="k6D-3q-g63"/>
         <segue reference="0ER-4h-Vm5"/>
         <segue reference="qQm-Gb-OFm"/>
-        <segue reference="t1P-IH-Fqv"/>
+        <segue reference="zWk-C9-vqB"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Goal" width="1494" height="725"/>
