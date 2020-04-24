@@ -12,6 +12,8 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var addBarButton: UIBarButtonItem!
+    @IBOutlet weak var editBarButton: UIBarButtonItem!
     var habitArray = ["Wake up at 8am every day", "Go on a run every other day", "Eat 3 servings of vegetables every day", "Call parents once a week", "Call best friend once a week", "Volunteer once a week"]
     
     override func viewDidLoad() {
@@ -37,6 +39,24 @@ class ProfileViewController: UIViewController {
         if let selectedIndexPath = tableView.indexPathForSelectedRow {
             habitArray[selectedIndexPath.row] = source.habitItem
             tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
+        } else {
+            let newIndexPath = IndexPath(row: habitArray.count, section: 0)
+            habitArray.append(source.habitItem)
+            tableView.insertRows(at: [newIndexPath], with: .bottom)
+            tableView.scrollToRow(at: newIndexPath, at: .bottom, animated: true)
+        }
+    }
+    
+    
+    @IBAction func editButtonPressed(_ sender: UIBarButtonItem) {
+        if tableView.isEditing {
+            tableView.setEditing(false, animated: true)
+            sender.title = "Edit"
+            addBarButton.isEnabled = true
+        } else {
+            tableView.setEditing(true, animated: true)
+            sender.title = "Done"
+            addBarButton.isEnabled = false
         }
     }
     
@@ -52,5 +72,17 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = "\(habitArray[indexPath.row])"
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            habitArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let itemToMove = habitArray[sourceIndexPath.row]
+        habitArray.remove(at: sourceIndexPath.row)
+        habitArray.insert(itemToMove, at: destinationIndexPath.row)
     }
 }

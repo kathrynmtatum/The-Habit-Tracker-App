@@ -368,7 +368,16 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem id="GMz-Og-ac6">
-                                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="xmr-bl-Uhz"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Edit" id="zMZ-I4-uYI">
+                                            <connections>
+                                                <action selector="editButtonPressed:" destination="trj-YS-h1D" id="dVt-4F-568"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="xmr-bl-Uhz">
+                                            <connections>
+                                                <segue destination="4Au-iJ-67g" kind="show" identifier="AddDetail" id="t1P-IH-Fqv"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -408,6 +417,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="fZ7-F4-aXO"/>
                     <connections>
+                        <outlet property="addBarButton" destination="xmr-bl-Uhz" id="vtk-zE-hvY"/>
+                        <outlet property="editBarButton" destination="zMZ-I4-uYI" id="eIg-cO-3zV"/>
                         <outlet property="tableView" destination="Kky-sh-0k6" id="B6n-oM-0TO"/>
                     </connections>
                 </viewController>
@@ -419,8 +430,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="k6D-3q-g63"/>
         <segue reference="0ER-4h-Vm5"/>
-        <segue reference="nlf-AU-6KQ"/>
-        <segue reference="Nez-05-Yp4"/>
+        <segue reference="qQm-Gb-OFm"/>
+        <segue reference="t1P-IH-Fqv"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Goal" width="1494" height="725"/>
