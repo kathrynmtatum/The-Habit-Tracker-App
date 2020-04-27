@@ -15,11 +15,24 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var addBarButton: UIBarButtonItem!
     @IBOutlet weak var editBarButton: UIBarButtonItem!
     var habitArray = ["Wake up at 8am every day", "Go on a run every day", "Eat 3 servings of vegetables every day", "Call best friend once a week", "Volunteer once a week"]
+    var habitItems: [habitItem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    func saveData() {
+        let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let documentURL = directoryURL.appendingPathComponent("habits").appendingPathExtension("json")
+        let jsonEncoder = JSONEncoder()
+        let data = try? jsonEncoder.encode(habitItems)
+        do {
+            try data?.write(to: documentURL, options: .noFileProtection)
+        } catch {
+            print("Error")
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -45,6 +58,7 @@ class ProfileViewController: UIViewController {
             tableView.insertRows(at: [newIndexPath], with: .bottom)
             tableView.scrollToRow(at: newIndexPath, at: .bottom, animated: true)
         }
+        saveData()
     }
     
     
@@ -78,11 +92,13 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         if editingStyle == .delete {
             habitArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            saveData()
         }
     }
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let itemToMove = habitArray[sourceIndexPath.row]
         habitArray.remove(at: sourceIndexPath.row)
         habitArray.insert(itemToMove, at: destinationIndexPath.row)
+        saveData()
     }
 }

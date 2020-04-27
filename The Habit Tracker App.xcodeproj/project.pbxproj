@@ -17,6 +17,7 @@
 		521DF076244A28BA00800743 /* ItemDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DF075244A28BA00800743 /* ItemDetailTableViewController.swift */; };
 		521DF078244A28EC00800743 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DF077244A28EC00800743 /* BrowseViewController.swift */; };
 		521DF07A244A293C00800743 /* BrowseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DF079244A293C00800743 /* BrowseDetailViewController.swift */; };
+		52E4F01A245759D0009D0797 /* HabitItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4F019245759D0009D0797 /* HabitItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		521DF075244A28BA00800743 /* ItemDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailTableViewController.swift; sourceTree = "<group>"; };
 		521DF077244A28EC00800743 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
 		521DF079244A293C00800743 /* BrowseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseDetailViewController.swift; sourceTree = "<group>"; };
+		52E4F019245759D0009D0797 /* HabitItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				521DF05F244A254A00800743 /* AppDelegate.swift */,
 				521DF061244A254A00800743 /* SceneDelegate.swift */,
+				52E4F019245759D0009D0797 /* HabitItem.swift */,
 				521DF063244A254A00800743 /* ViewController.swift */,
 				521DF073244A288700800743 /* ProfileViewController.swift */,
 				521DF075244A28BA00800743 /* ItemDetailTableViewController.swift */,
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				521DF078244A28EC00800743 /* BrowseViewController.swift in Sources */,
+				52E4F01A245759D0009D0797 /* HabitItem.swift in Sources */,
 				521DF064244A254A00800743 /* ViewController.swift in Sources */,
 				521DF076244A28BA00800743 /* ItemDetailTableViewController.swift in Sources */,
 				521DF060244A254A00800743 /* AppDelegate.swift in Sources */,
