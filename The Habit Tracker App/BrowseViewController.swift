@@ -12,7 +12,7 @@ class BrowseViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var categories = ["Nutrition", "Exercise", "Sleep", "Productivity", "Emotional/Spiritual", "Social Relationships", "Career"]
+    var categories = ["Nutrition", "Exercise", "Sleep", "Productivity", "Self Care", "Social Relationships", "Career"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

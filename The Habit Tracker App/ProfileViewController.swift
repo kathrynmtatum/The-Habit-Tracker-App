@@ -14,7 +14,7 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var addBarButton: UIBarButtonItem!
     @IBOutlet weak var editBarButton: UIBarButtonItem!
-    var habitArray = ["Wake up at 8am every day", "Go on a run every other day", "Eat 3 servings of vegetables every day", "Call parents once a week", "Call best friend once a week", "Volunteer once a week"]
+    var habitArray = ["Wake up at 8am every day", "Go on a run every day", "Eat 3 servings of vegetables every day", "Call best friend once a week", "Volunteer once a week"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

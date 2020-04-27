@@ -15,10 +15,10 @@ class BrowseDetailViewController: UIViewController {
     
     var habit: [String] = []
     var nutritionHabits = ["Eat more fruit", "Eat more vegetables", "Eat more protein"]
-    var exerciseHabits = ["Run every day", "Lift weights", "Do yoga"]
+    var exerciseHabits = ["Run every day", "Lift weights", "Work on endurance", "Improve arm strength", "Work on abs", "Run a faster mile", "Practice push-ups"]
     var sleepHabits = ["Go to sleep earlier", "Wake up earlier", "Get 8 hours of sleep"]
-    var productivityHabits = ["Put phone away", "Less procrastination"]
-    var emotionalHabits = ["Yoga", "Mindfulness"]
+    var productivityHabits = ["Check email", "2 hours of uninturrupted work", "Less procrastination", "Put phone away while working", "Use a planner", "Start work early", "Get 3 assignments done each day"]
+    var emotionalHabits = ["Mindfulness", "Yoga", "Take a walk", "Journal", "Call a friend", "Read a good book"]
     var socialHabits = ["Call friends", "Call family"]
     var careerHabits = ["Be on time", "Dress professionally", "Network"]
 
@@ -36,7 +36,7 @@ class BrowseDetailViewController: UIViewController {
             habit = sleepHabits
         case "Productivity" :
             habit = productivityHabits
-        case "Emotional/Spiritual" :
+        case "Self Care" :
             habit = emotionalHabits
         case "Social Relationships" :
             habit = socialHabits
