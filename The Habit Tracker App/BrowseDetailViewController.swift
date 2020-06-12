@@ -11,6 +11,7 @@ import UIKit
 class BrowseDetailViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    
     var selection: String!
     
     var habit: [String] = []
